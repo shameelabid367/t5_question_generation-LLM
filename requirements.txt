@@ -1,0 +1,6 @@
+Flask==3.0.0
+pymongo==4.6.1
+python-dotenv==1.0.0
+sentencepiece==0.1.99
+torch==2.1.2
+transformers==4.36.2

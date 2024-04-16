@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Process Completed</h2>
+        <p style="width: 100%; text-align: center;">
+            Redirecting in <span id="sec">5</span> seconds.
+        </p>
+        <div class="ct">
+            <a href="/gen_t5"><input id="button2" type="submit" value="Go Back" onclick="goBack()"></a>
+        </div>
+    </div>
+    <script>
+        sec = 5;
+        var mySpan = document.getElementById('sec');
+        setInterval(() => {
+            sec--;
+            mySpan.textContent = sec;
+
+            if (sec <= 0) {
+                goBack();
+            }
+        }, 1000);
+
+        function goBack() {
+            window.history.go(-2);
+        }
+    </script>
+</body>
+</html>
